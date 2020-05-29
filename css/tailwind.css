@@ -1,0 +1,28 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+/* CSS Variables */
+:root{
+    --dark-primary: #080808;
+    --dark-secondary: #333333;
+    --orange-primary: #FBC02D;
+    --orange-secondary: #FFFD6A;
+    --dark-gradient: linear-gradient(#080808, #333333);
+    --orange-gradient: linear-gradient(#FBC02D, #FFFD6A);
+}
+
+/* Tailwind Styles */
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/* Utility Classes */
+.gradient-dark{
+    background: var(--dark-gradient);
+}
+
+.gardient-primary{
+    background: var(--orange-gradient);
+}
