@@ -20,7 +20,8 @@
 
 /* Utility Classes */
 .gradient-dark{
-    background: var(--dark-gradient);
+    background: linear-gradient(to bottom, #080808 0%, rgba(8, 8, 8, 0.738) 19%, rgba(8, 8, 8, 0.541) 34%, rgba(8, 8, 8, 0.382) 47%, rgba(8, 8, 8, 0.278) 56.5%, rgba(8, 8, 8, 0.194) 65%, rgba(8, 8, 8, 0.126) 73%, rgba(8, 8, 8, 0.075) 80.2%, rgba(8, 8, 8, 0.042) 86.1%, rgba(8, 8, 8, 0.021) 91%, rgba(8, 8, 8, 0.008) 95.2%, rgba(8, 8, 8, 0.002) 98.2%, rgba(8, 8, 8, 0) 100%);
+
 }
 
 .gardient-primary{
