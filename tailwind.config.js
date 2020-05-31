@@ -1,5 +1,8 @@
 module.exports = {
-  purge: [],
+  purge: [
+    './src/**/*.js',
+    './src/**/*.vue'
+  ],
   theme: {
     fontFamily: {
       display: ['Roboto Condensed', 'sans-serif'],
