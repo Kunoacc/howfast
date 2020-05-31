@@ -1,5 +1,23 @@
 /* FONTS */
+/* Fonts and Font Faces */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@font-face{
+    font-family: 'Proxima Nova';
+    src: url('../fonts/ProximaNova-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: 'Proxima Nova';
+    src: url('../fonts/ProximaNova-Semibold.ttf');
+    font-weight: 600;
+}
+
+@font-face{
+    font-family: 'Proxima Nova';
+    src: url('../fonts/ProximaNova-Bold.ttf');
+    font-weight: 700;
+}
 
 /* CSS Variables */
 :root{
@@ -9,6 +27,7 @@
     --orange-secondary: #FFFD6A;
     --dark-gradient: linear-gradient(#080808, #333333);
     --orange-gradient: linear-gradient(#FBC02D, #FFFD6A);
+    --grey: #BDBDBD;
 }
 
 /* Tailwind Styles */
@@ -20,10 +39,34 @@
 
 /* Utility Classes */
 .gradient-dark{
-    background: linear-gradient(to bottom, #080808 0%, rgba(8, 8, 8, 0.738) 19%, rgba(8, 8, 8, 0.541) 34%, rgba(8, 8, 8, 0.382) 47%, rgba(8, 8, 8, 0.278) 56.5%, rgba(8, 8, 8, 0.194) 65%, rgba(8, 8, 8, 0.126) 73%, rgba(8, 8, 8, 0.075) 80.2%, rgba(8, 8, 8, 0.042) 86.1%, rgba(8, 8, 8, 0.021) 91%, rgba(8, 8, 8, 0.008) 95.2%, rgba(8, 8, 8, 0.002) 98.2%, rgba(8, 8, 8, 0) 100%);
-
+    /* background: linear-gradient(to bottom, #080808 0%, rgba(8, 8, 8, 0.738) 19%, rgba(8, 8, 8, 0.541) 34%, rgba(8, 8, 8, 0.382) 47%, rgba(8, 8, 8, 0.278) 56.5%, rgba(8, 8, 8, 0.194) 65%, rgba(8, 8, 8, 0.126) 73%, rgba(8, 8, 8, 0.075) 80.2%, rgba(8, 8, 8, 0.042) 86.1%, rgba(8, 8, 8, 0.021) 91%, rgba(8, 8, 8, 0.008) 95.2%, rgba(8, 8, 8, 0.002) 98.2%, rgba(8, 8, 8, 0) 100%); */
+    background-color: var(--dark-secondary);
+    background-image: url('/images/bg.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .gardient-primary{
     background: var(--orange-gradient);
+}
+
+/* Custom Styling */
+html *{
+    @apply font-body font-normal;
+}
+
+footer > div {
+    @apply relative;
+}
+
+footer > div:not(:last-child)::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    background: white;
+    right: 0px;
+    @apply my-auto rounded-full;
 }
