@@ -1,209 +1,52 @@
 import Head from 'next/head'
+import Link from 'next/link'
+import Stat from '@/components/stat'
+import Speed from '@/components/speed'
 
 export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    return (
+        <div className="flex bg-dark-secondary w-screen h-screen absolute top-0 left-0">
+            <Head>
+                <title>HowFast ⚡ | Internet Speed Test</title>
+            </Head>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+            <main className="flex-grow gradient-dark flex flex-col justify-between">
+                <nav className="py-6 flex items-center justify-center">
+                    <Link href="/">
+                        <img src="/images/logo.svg" width={120}></img>
+                    </Link>
+                </nav>
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+                <div className="container mx-auto flex flex-col items-center">
+                    <Speed></Speed>
+                    <div className="flex flex-row items-center mt-10">
+                        <button className="border-orange-primary border-2 py-4 px-10 rounded-full bg-transparent text-orange-primary text-lg">
+                            Retry
+                        </button>
+                        <button className="py-3 px-3 gardient-primary rounded-full flex-grow-0 ml-4">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.2386 2.33333C11.6798 2.33333 11.2021 2.72836 11.0947 3.27669L10.7051 5.27734C9.74752 5.63943 8.86212 6.1453 8.08463 6.78353L6.16601 6.12272C5.63751 5.94072 5.05604 6.15925 4.77604 6.64225L3.01692 9.69108C2.73809 10.1752 2.83957 10.7899 3.26074 11.1562L4.79882 12.4938C4.71883 12.9854 4.66666 13.4858 4.66666 14C4.66666 14.5142 4.71883 15.0146 4.79882 15.5062L3.26074 16.8438C2.83957 17.2101 2.73809 17.8248 3.01692 18.3089L4.77604 21.3577C5.05487 21.8419 5.63751 22.0604 6.16601 21.8796L8.08463 21.2188C8.86186 21.8566 9.74795 22.3607 10.7051 22.7227L11.0947 24.7233C11.2021 25.2716 11.6798 25.6667 12.2386 25.6667H15.7614C16.3202 25.6667 16.7979 25.2716 16.9053 24.7233L17.2949 22.7227C18.2525 22.3606 19.1379 21.8547 19.9154 21.2165L21.834 21.8773C22.3625 22.0593 22.944 21.8419 23.224 21.3577L24.9831 18.3066C25.2619 17.8225 25.1604 17.2101 24.7393 16.8438L23.2012 15.5062C23.2812 15.0146 23.3333 14.5142 23.3333 14C23.3333 13.4858 23.2812 12.9854 23.2012 12.4938L24.7393 11.1562C25.1604 10.7899 25.2619 10.1752 24.9831 9.69108L23.224 6.64225C22.9451 6.15808 22.3625 5.93961 21.834 6.12044L19.9154 6.78125C19.1381 6.14342 18.252 5.63927 17.2949 5.27734L16.9053 3.27669C16.7979 2.72836 16.3202 2.33333 15.7614 2.33333H12.2386ZM14 9.33333C16.5772 9.33333 18.6667 11.4228 18.6667 14C18.6667 16.5772 16.5772 18.6667 14 18.6667C11.4228 18.6667 9.33333 16.5772 9.33333 14C9.33333 11.4228 11.4228 9.33333 14 9.33333Z" fill="black"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
 
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/zeit/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+                <footer className="grid grid-cols-4 justify-center container mx-auto mb-20">
+                    <div className="flex flex-col justify-center ml-10">
+                        <Stat label="isp" value="Ntel Nigeria" descriptor="192.168.444.532" hasMargin={false} isCentered={false}></Stat>
+                        <Stat label="server" value="airtel networks" descriptor="lagos" hasMargin={false} isCentered={false} className="mt-6"></Stat>
+                    </div>
+                    <div className="flex items-center justify-center">
+                        <Stat label="ping" value="25" descriptor="ms" hasMargin={true} shouldCapitalize={false}></Stat>
+                    </div>
+                    <div className="flex items-center justify-center">
+                        <Stat label="download" value="104" descriptor="mbps" hasMargin={true}></Stat>
+                    </div>
+                    <div className="flex items-center justify-center">
+                        <Stat label="upload" value="36.54" descriptor="mbps" hasMargin={true}></Stat>
+                    </div>
+                </footer>
+            </main>
         </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
+    )
 }
